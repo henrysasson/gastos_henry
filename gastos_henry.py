@@ -172,15 +172,18 @@ if selected == 'Dashboard':
         #     st.metric("Total Gastos no Período", f"R$ {total_gasto:.2f}")
 
         # Define delta numérico para o Streamlit colorir corretamente
-        delta_valor = total_gasto - meta
-        mensagem = "Acima da Limite" if delta_valor > 0 else "Dentro do Limite"
+        if total_gasto > meta:
+            delta_text = "Acima do Limite"
+            delta_color = "normal"  # vermelho
+        else:
+            delta_text = "Dentro da Meta"
+            delta_color = "inverse"  # verde
         
-        # Exibe a métrica com o delta numérico
         st.metric(
             label="Total Gastos no Período",
             value=f"R$ {total_gasto:.2f}",
-            delta=f"R$ {delta_valor:.2f}",
-            delta_color="inverse"  # vermelho se aumento, verde se redução
+            delta=delta_text,
+            delta_color=delta_color
         )
 
     with col4:
