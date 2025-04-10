@@ -88,7 +88,7 @@ if selected == 'Adicionar Transação':
 
     if input_type == "Gasto":
         categoria = st.selectbox("Categoria", (
-            "Alimentação", "Compras", "Estética", "Future Me", "Investimento", "Lazer", "Outros", "Saúde","Transporte"))
+            "Alimentação", "Assinatura", "Compras", "Educação", "Lazer", "Outros", "Saúde", "Transporte"))
         descricao = st.text_input("Descrição", placeholder="Ex: Uber, iFood, Cinema...")
         forma_pagamento = st.selectbox("Forma de Pagamento", ("Crédito", "PIX", "Dinheiro", "Débito"))
         recorrente = st.selectbox("Recorrente?", ("Não", "Sim"))
