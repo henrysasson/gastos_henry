@@ -160,7 +160,7 @@ if selected == 'Dashboard':
     
     # Exibição
     col3, col4, col5 = st.columns(3)
-    meta = 3000
+    meta = 2500
     
     with col3:
         total_gasto = temp_df_gastos['valor'].sum()
