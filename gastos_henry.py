@@ -39,7 +39,7 @@ def upload_db():
     sha = r_get.json().get("sha") if r_get.status_code == 200 else None
 
     payload = {
-        "message": "update controle_pessoal.db",
+        "message": "update controle_pessoal_henry.db",
         "content": content,
         "branch": "main"
     }
