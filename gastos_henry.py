@@ -50,7 +50,10 @@ def upload_db():
 
 # BAIXAR O BANCO CASO NÃO EXISTA
 if not os.path.exists(FILE_PATH):
+    st.warning("Banco local não encontrado. Baixando do GitHub...")
     download_db()
+else:
+    st.info("Banco local já existe. Usando dados da sessão anterior.")
 
 # CONEXÃO COM SQLITE
 conn = sqlite3.connect(FILE_PATH)
